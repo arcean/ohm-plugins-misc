@@ -1,0 +1,1440 @@
+ohm-plugins-misc (1:1.94+0m8) unstable; urgency=low
+
+  * This entry has been added by BIFH queue processor
+    version has been changed to 1:1.94+0m8
+
+ -- BIFH Bot <sysint@maemo.research.nokia.com>  Mon, 16 Jan 2012 10:08:20 +0200
+
+ohm-plugins-misc (1:1.94) unstable; urgency=low
+
+  * cgroups: free previously initialized value
+  * cgroups: initialize variable allocated on stack
+  * Fixes: NB#286909
+
+ -- Jussi Kinnula <ext-jussi.1.kinnula@nokia.com>  Thu, 16 Jan 2012 10:08:19 +0200
+
+ohm-plugins-misc (1:1.93) unstable; urgency=low
+
+  * resource: release srcid after idle task has been called
+  * Fixes: NB#294329
+
+ -- Jussi Kinnula <ext-jussi.1.kinnula@nokia.com>  Thu, 12 Jan 2012 10:35:41 +0200
+
+ohm-plugins-misc (1:1.92) unstable; urgency=low
+
+  * cgroups: remove unexported functions from a header file
+  * cgroups: rename classify_by_parent() into classify_by_process()
+  * cgroups: implement basic policy for tracer process
+  * Fixes: NB#294399
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Mon, 12 Dec 2011 15:00:34 +0200
+
+ohm-plugins-misc (1:1.91) unstable; urgency=low
+
+  * cgroups: increase buffer size for connector messages
+  * configure.in: add ptrace and comm support checks for cgroups plugin
+  * cgroups: add basic support for ptrace event tracing
+  * cgroups: add comm event basic tracing support
+  * Fixes: NB#292670
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Tue, 29 Nov 2011 14:09:31 +0200
+
+ohm-plugins-misc (1:1.90) unstable; urgency=low
+
+  * accessories: remove redundant conditional nesting
+  * accessories: shorten excessive debug message
+  * accessories: cosmetic changes in is_spurious_event() function
+  * accessories: remove static variable, which stores factstore pointer
+  * accessories: remove hal build conditional dependency
+  * accessories: define audio_device_accessible fact name once
+  * accessories: remove headset specific debug variable
+  * accessories: remove headset.c file from sources
+  * accessories: fix list of facts iteration
+  * notification: do not try to release non-acquired resource set
+  * Fixes: NB#288660
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Wed, 02 Nov 2011 11:52:17 +0200
+
+ohm-plugins-misc (1:1.89) unstable; urgency=low
+
+  * notification: new resource set for battery notifications
+  * Fixes: NB#251760
+
+ -- Jarmo Tulonen <jarmo.tulonen@nokia.com>  Mon, 31 Oct 2011 12:16:10 +0300
+
+ohm-plugins-misc (1:1.88) unstable; urgency=low
+
+  * telephony: call telephony_local_hungup_hook after call hung up
+  * Fixes: NB#264073
+
+ -- Jarmo Tulonen <jarmo.tulonen@nokia.com>  Mon, 17 Oct 2011 13:31:15 +0300
+
+ohm-plugins-misc (1:1.87) unstable; urgency=low
+
+  * videoep: do not disable crtc, while setting screen size
+  * videoep: specify correct rotation value for RandR
+  * Fixes: NB#277111
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Wed, 12 Oct 2011 10:40:13 +0300
+
+ohm-plugins-misc (1:1.86) unstable; urgency=low
+
+  * cgroups: print strings for different event types
+  * cgroups: remove internal logic from apptrack_group_change()
+  * cgroups: simplify apptrack_group_change() interface
+  * cgroups: rename apptrack_group_change() function
+  * cgroups: redundant arguments shall not be passed to dependency resolver
+  * cgroups: simplify partition change interface
+  * cgroups: adapt changed cgroup_partition type
+  * cgroups: simplify classify_by_parent() function
+  * cgroups: refine classify_by_rules() function
+  * cgroups: add debugging output, when classification by argument is done
+  * cgroups: simplify process_update_state() function
+  * cgroups: clean up apptrack_update() function
+  * cgroups: add partition reference for managed processes
+  * cgroups: move only the process reported in cgroup_partition change
+  * cgroups: rearrange process_create() function
+  * cgroups: provide valid output, if a process can't be affiliated
+  * cgroups: add unified name representation of a process classification
+  * cgroups: replace process binary references with process names
+  * cgroups: use newline nonterminal
+  * cgroups: leads option is to be parsed by cgroup plugin
+  * cgroups: add leader debug flag
+  * cgroups: add basic support for leader operations
+  * cgroups: add more info to leader debugging output
+  * cgroups: check for partition of a process early
+  * cgroups: move all threads with the same name in couple to a moved task
+  * Fixes: NB#280319
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Tue, 04 Oct 2011 14:46:36 +0300
+
+ohm-plugins-misc (1:1.85) unstable; urgency=low
+
+  * cgroups: use mass classification rules to classify process threads
+  * Fixes: NB#269507
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Tue, 04 Oct 2011 10:33:54 +0300
+
+ohm-plugins-misc (1:1.84) unstable; urgency=low
+
+  * cgroups: remove redundant define
+  * cgroups: print non-default group priority configuration
+  * telephony: narrow down catched DBus signals on channel group interface
+  * telephony: fine print lists of channel interface members
+  * telephony: fix maximum limit of destination string
+  * Fixes: NB#282885
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Wed, 28 Sep 2011 14:02:53 +0300
+
+ohm-plugins-misc (1:1.83) unstable; urgency=low
+
+  [Antti-Ville Jansson]
+  * notification: Add the possibility to specify what events can have multiple simultaneous instances playing
+  * notification: Get rid of some trivial compiler warnings
+  * notification: Get rid of the fake grant list
+  * notification: Allow multiple notifications of the same type to use the same resources simultaneously
+  * notification: Fix an error with num_users
+  * Partial fix: NB#262002
+  
+  [Harri Mahonen]
+  * notification: allow cancel action for proclaimer events
+  * notification: remove unused longlive event functionality
+  * notification: cleanup unused backend update functionality
+  * notification: cleanup unused subscription functionality
+  * Fixes: NB261980.
+  * Fixes: NB#233469.
+
+ -- Nippan Singam <ext-nippan.singam@nokia.com>  Wed, 07 Sep 2011 14:42:07 +0300
+
+ohm-plugins-misc (1:1.82) unstable; urgency=low
+
+  * resource: solve strict aliasing violation issue
+  * Fixes: NB#256323.
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Tue, 06 Sep 2011 13:42:07 +0300
+
+ohm-plugins-misc (1:1.81) unstable; urgency=low
+
+  * resource: validate resource sets for application classes
+  * resource: reply message shall be send before transaction end
+  * Revert: "videoep: specify correct rotation value for RandR"
+  * Fixes: NB236296.
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Thu, 18 Aug 2011 16:42:07 +0300
+
+ohm-plugins-misc (1:1.80) unstable; urgency=low
+
+  [Vladimir Zapolskiy]
+  * bluetooth: use glib memory allocator function
+  * videoep: specify correct rotation value for RandR
+  * videoep: don't set screen size to unsupported size
+  * profile: remove new line characters from debug output
+
+  [Nippan Singam]
+  * Revert "telephony: try to handle calls started during bootup"
+  * Reverted the change because of regression caused to bug #276518.
+  * Fixes: NB#277809.
+
+ -- Nippan Singam <ext-nippan.singam@nokia.com>  Thu, 18 Aug 2011 11:28:05 +0300
+
+ohm-plugins-misc (1:1.79) unstable; urgency=low
+
+  * Bumped version for change in libresource packaging
+  * Fixes: NB#256350.
+
+ -- Nippan Singam <ext-nippan.singam@nokia.com>  Tue, 16 Aug 2011 11:28:05 +0300
+
+ohm-plugins-misc (1:1.78) unstable; urgency=low
+  [Harri Mahonen]
+  * notification: rename BTStop to StopRingtone
+  * notification: add method for stopping ringtone from bluez
+  * Fixes: NB#252476.
+
+  [Jarmo Tulonen]
+  * telephony: try to handle calls started during bootup
+
+  [Vladimir Zapolskiy]
+  * console: eliminate leak of file descriptors on console release
+  * cgroups: don't try to classify a rescheduled process by rules
+  * cgroups: reduce amount of system calls while OOM adjustment procedure
+  * cgroups: remove a redundant local variable
+  * Fixes: NB#273489.
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Tue, 26 Jul 2011 14:28:38 +0300
+
+ohm-plugins-misc (1:1.77) unstable; urgency=low
+
+  * cgroups: prevent apptrack group_change if no context available
+  * Fixes: NB#265817.
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Thu, 07 Jul 2011 10:28:10 +0300
+
+ohm-plugins-misc (1:1.76) unstable; urgency=low
+
+  * Removing Immersion Touchscreen licence from vibra.ini
+  * Fixes: NB#267410.
+
+ -- Nippan Singam <ext-nippan.singam@nokia.com>  Wed, 22 Jun 2011 11:28:05 +0300
+
+ohm-plugins-misc (1:1.75) unstable; urgency=low
+
+  * cgrp: don't adjust oom_adj, if current value is negative
+  * Fixes: NB#259994
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Tue, 31 May 2011 16:28:05 +0300
+
+ohm-plugins-misc (1:1.74) unstable; urgency=low
+
+  [ Krisztian Litkey ]
+  * Updated dependency on policy-settings-* (requires one with dspep.ini).
+  * cgrp: netlink recovery fixes and improvements.
+  * cgrp: support custom cgroup controls without any value mappings.
+  * Don't force -g3 -O0 compilation flags explicitly in any plugin.
+  * Update resource set video pid as soon as it is discovered.
+  * Dspep: configurable support for unauthorized/guest_mode access.
+  * Moved dspep.ini to the ruleset, disabled here.
+  * Added aegis manifest generation for ohm-session-agent.
+  * Added aegis config generator.
+
+  [ Janos Kovacs ]
+  * fix for class-class preemption
+  * rules to select classes for class-class preemption
+  * Fixes: NB#256973
+
+ -- Krisztian Litkey <kli@iki.fi>  Mon, 16 May 2011 21:41:54 +0300
+
+ohm-plugins-misc (1:1.73) unstable; urgency=low
+
+  * Align headset detection with the latest kernel patches to the driver.
+  * Free bit more memory in cgroups.
+  * Videoep: don't ever SIGPIPE busy-loop forever.
+  * Profile: suppress profile loading error if no saved state exists.
+  * Fixes: NB#254609.
+
+ -- Krisztian Litkey <kli@iki.fi>  Fri, 13 May 2011 11:33:18 +0300
+
+ohm-plugins-misc (1:1.72) unstable; urgency=low
+
+  [ Krisztian Litkey ]
+  * Added facttool plugin from Mathieu Soulard.
+  * telephony: support for BT UI call acceptance detection kludge.
+  * cgrp: support for thread creation classification events.
+  * cgrp: more proper netlink error checking and handling.
+  * cgrp: rate-limit reinitialising our netlink connection upon error.
+  * accessories: support jack events for incompatible accessories.
+  * Coverity issue fixes.
+
+  [ Ismo Puustinen ]
+  * Fixes: NB#252817.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Fri, 06 May 2011 09:38:24 +0300
+
+ohm-plugins-misc (1:1.71) unstable; urgency=low
+
+  * Fixes: NB#243179.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Tue, 05 Apr 2011 18:48:29 +0300
+
+ohm-plugins-misc (1:1.70) unstable; urgency=low
+
+  * Fixes: NB#230660.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Fri, 01 Apr 2011 10:43:00 +0300
+
+ohm-plugins-misc (1:1.69) unstable; urgency=low
+
+  * cgrp: allow locked OOM adjustment to be re-locked to a different value. 
+  * Fixes: NB#213676.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Thu, 24 Mar 2011 02:36:23 +0200
+
+ohm-plugins-misc (1:1.68) unstable; urgency=low
+
+  * telephony: kludge for telepathy stream-engine based video calls.
+  * backlight: fix memory leaks.
+  * Fixes: NB#222603.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Tue, 15 Mar 2011 00:41:32 +0200
+
+ohm-plugins-misc (1:1.67) unstable; urgency=low
+
+  [Janos Kovacs]
+  * resource: support for video message
+
+  [Krisztian Litkey]
+  * cgrp: support for tracking process exit events from the ruleset.
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Wed, 09 Mar 2011 00:00:54 +0200
+
+ohm-plugins-misc (1:1.66) unstable; urgency=low
+
+  * cgrp: support for OOM-score and priority adjustment reponse curves.
+  * cgrp: support for custom cgroup settings in decisions.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Sat, 05 Mar 2011 20:15:54 +0200
+
+ohm-plugins-misc (1:1.65) unstable; urgency=low
+
+  * Upstart plugin (Fixes: NB#211457).
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Wed, 02 Mar 2011 15:51:49 +0200
+
+ohm-plugins-misc (1:1.64) unstable; urgency=low
+
+  [Janos Kovacs]
+  * PID support in resource sets
+  * dspep plugin
+  * videoep support for xvideo usage control
+  * Fixes: NB#210941
+  * timestamping at initialization of notification, resource
+    and videoep plugins
+  * support for deferred/immediate signalling
+  * Fixes: NB#225502
+  * videoep query errors will not block request queues any more
+
+  [Krisztian Litkey]
+  * cgrp: auch... give plenty of time for registering to connector events.
+  * Fixes: NB#228877.
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Thu, 17 Feb 2011 23:46:11 +0200
+
+ohm-plugins-misc (1:1.63) unstable; urgency=low
+
+  * cgrp: initial implementation of process OOM-protection.
+  * cgrp: initial implementation of the new process priorization mechanism.
+  * telephony: mark resources as being released when releasing them.
+  * accessories: added support for configurable inverted jack event semantics.
+  * Fixes: NB#224130.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Tue, 15 Feb 2011 18:10:37 +0200
+
+ohm-plugins-misc (1:1.62) unstable; urgency=low
+
+  * cgrp: when scanning /proc reclassify also known processes.
+  * cgrp: added support for configurable process priority preservation.
+  * cgrp: classification improvements and fixes, always-fallback option.
+  * cgrp: added wildcard id events, no-op action, better rule lookup/find/print.
+  * cgrp: event-specific classification, discovery & classification fixes.
+  * cgrp: honour voluntarily lowered process priorities
+  * Fixes: NB#218131.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Thu, 03 Feb 2011 19:41:04 +0200
+
+ohm-plugins-misc (1:1.61) unstable; urgency=low
+
+  * Disabled hal and buttons plugin.
+  * Added some support for unc.
+  * Fixes: NB#222789
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Fri, 28 Jan 2011 15:19:13 +0200
+
+ohm-plugins-misc (1:1.60) unstable; urgency=low
+
+  [ Krisztian Litkey ]
+  * Vibra: configurable vibra on/off logic, better diagostic messages.
+  * Vibra: don't give up on vibra so easily, try to reinitialize on demand.
+  * Fixes: NB#213226.
+
+  [ Ismo Puustinen ]
+  * Refactor info signal handling in media plugin.
+  * Fixes: NB#190553
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Tue, 25 Jan 2011 15:43:24 +0200
+
+ohm-plugins-misc (1:1.59) unstable; urgency=low
+
+  * Telephony: added support for cmtautoactivate.
+  * Resource: update in acquire state with granted resources is a new request.
+  * Fixes: NB#216023.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Wed, 12 Jan 2011 20:19:02 +0200
+
+ohm-plugins-misc (1:1.58) unstable; urgency=low
+
+  * More reliable handling of the session bus restart.
+  * Fixes: NB#211506.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Mon, 20 Dec 2010 17:07:08 +0200
+
+ohm-plugins-misc (1:1.57) unstable; urgency=low
+
+  [ Krisztian Litkey ]
+  * cgrp: always find the root partition (prevent crashes on process_ignore).
+  * Fixes: NB#212562.
+  * cgrp: fix printing multiple actions (don't crash).
+
+  [ Ismo Puustinen ]
+  * Fixes: NB#212840
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Mon, 20 Dec 2010 16:54:45 +0200
+
+ohm-plugins-misc (1:1.56) unstable; urgency=low
+
+  [ Vladimir Zapolskiy ]
+  * install check_profile test again, needed for automatic testing
+
+  [ Ismo Puustinen ]
+  * GConf directory granularity improved. (Fixes NB 210108)
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Wed, 15 Dec 2010 11:48:01 +0200
+
+ohm-plugins-misc (1:1.55) unstable; urgency=low
+
+  * disable check_profile test from compilation and installation
+  * remove ohm-session-agent scripts from installation
+  * Fixes: NB#210124
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Fri, 10 Dec 2010 12:00:15 +0200
+
+ohm-plugins-misc (1:1.54) unstable; urgency=low
+
+  * ohm-session-agent: remove resurrecting scripts
+  * ohm-session-agent: add session connection timeout parametrization
+  * respect dbus session failure for telephony and profile plugins
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Thu, 09 Dec 2010	20:31:32 +0200
+
+ohm-plugins-misc (1:1.53) unstable; urgency=low
+
+  * resource: do not send grant's for block'ed resource set with no AutoRelease
+  * Fixes: NB#208351
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Thu, 09 Dec 2010 16:05:21 +0200
+
+ohm-plugins-misc (1:1.52) unstable; urgency=low
+
+  * Default to 0.0.0 instead of UNKNOWN as a version.
+  * Check and warn about missing add-on rule directory.
+  * Give a warning but don't bail out on missing configuration file.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Wed, 08 Dec 2010 20:43:58 +0200
+
+ohm-plugins-misc (1:1.51) unstable; urgency=low
+
+  * videoep: video routing configuration comes from videoep.conf
+  * Implemented: SWP#Plicy-539
+  * In notification/proxy.c prevent cl_hash_delete() crashing when the hash
+    chain were empty
+  * symptom cure for bug NB#201906
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Sun, 05 Dec 2010 00:29:13 +0200
+
+ohm-plugins-misc (1:1.50) unstable; urgency=low
+
+  * Build vibra plugin only for armel target
+
+ -- Vladimir Zapolskiy <vladimir.zapolskiy@nokia.com>  Fri, 03 Dec 2010 10:39:42 +0200
+
+ohm-plugins-misc (1:1.49) unstable; urgency=low
+
+  * Report XCB connection failure as a warning and only at most once per potential connection.
+  * Multiple session bus notifications turned to warnings.
+  * Fixes: NB#200279.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Fri, 03 Dec 2010 12:28:59 +0200
+
+ohm-plugins-misc (1:1.48) unstable; urgency=low
+
+  * Change mode name 864x480 -> 854x460 (Fixes: NB#208035)
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Tue, 30 Nov 2010 15:07:00 +0200
+
+ohm-plugins-misc (1:1.47) unstable; urgency=low
+  [Krisztian Litkey]
+  * Enabled vibra plugin.
+  * Vibra muting logic fix attempt: mute vibra only if all vibra groups are muted.
+  [Janos Kovacs]
+  * Support for forced release of resources (Fixes: NB#200601)
+  * Cosmetic changes in resource plugin to get rid of compiler warnings
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Sat, 20 Nov 2010 18:41:10 +0200
+
+ohm-plugins-misc (1:1.46) unstable; urgency=low
+
+  [ Krisztian Litkey ]
+  * Initial support for the new stable (.DRAFT-less) conference interface.
+  * Fixes: NB#203663.
+  * ohm-session-agent: added verbosity control, don't log by default.
+  * Fixes: NB#205597.
+  * Emit also the pid in apptrack notifications and responses.
+
+  [ Ismo Puustinen ]
+  * Do not set accessory facts twice. (Fixes: NB#201169)
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Fri, 19 Nov 2010 15:36:32 +0200
+
+ohm-plugins-misc (1:1.45) unstable; urgency=low
+
+  * Better shave argument protection.
+  * Use destroy notifier callbacks to clean up the configuration table.
+  * Include also argv[0] in application tracking notifications and queries.
+  * Cgroups: failing to apply extra cgroup settings generate warnings instead of errors.
+  * Turned off all debug flags by default.
+  * Allow unsolicited grant/advice updates.
+  * Use shave for Kbuild-like compilation verbosity control.
+  * Added git-version-gen to support base package versioning.
+  * Don't expect the obsolete dvfs plugin to be built.
+  * Disabled ancient dvfs plugin.
+  * Update changelog.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Tue, 02 Nov 2010 15:59:05 +0200
+
+ohm-plugins-misc (1:1.44) unstable; urgency=low
+
+  * translate the incoming notification event name to internal ones
+  * notification forward pause and resume (Fixes: NB#197460)
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Wed, 13 Oct 2010 23:57:12 +0300
+
+ohm-plugins-misc (1:1.43) unstable; urgency=low
+
+  [Krisztian Litkey]
+  * Ouch... build the telephony plugin.
+  [Vsevolod Buzinov]
+  * Coverity-based fixes.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Thu, 07 Oct 2010 16:13:06 +0300
+
+ohm-plugins-misc (1:1.42) unstable; urgency=low
+
+  * security check at resource registartion
+  * Implemented: SWP#Plicy-235
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Wed, 06 Oct 2010 11:31:12 +0300
+
+ohm-plugins-misc (1:1.41) unstable; urgency=low
+
+  * proclaimer resource class
+  * Fixes: NB#185299
+  * Fixes: NB#190758
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Sun, 03 Oct 2010 23:36:11 +0300
+
+ohm-plugins-misc (1:1.40) unstable; urgency=low
+
+  * context dependent short play of notification or report busy
+  * Implemented: SWP#Plicy-458
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Wed, 29 Sep 2010 15:52:01 +0300
+
+ohm-plugins-misc (1:1.39) unstable; urgency=low
+
+  * Bumping the version due to the problem with the alsaped massacre build
+  * Fixes: NB#194797
+
+ -- Nippan Singam <ext-nippan.singam@nokia.com>  Mon, 27 Sep 2010 15:08:11 +0300
+
+ohm-plugins-misc (1:1.38) unstable; urgency=low
+
+  * Disable swap pressure notifications (Fixes: NB#191723).
+
+ -- Krisztian Litkey <mmf-audio-bounces@projects.maemo.org>  Wed, 15 Sep 2010 19:08:11 +0300
+
+ohm-plugins-misc (1:1.37) unstable; urgency=low
+
+  * Added automake and autoconf dependencies
+  * Fixes: NB#188893
+
+ -- Vsevolod Buzinov <ext-vsevolod.buzinov@nokia.com>  Fri, 03 Sep 2010 14:07:12 +0300
+
+ohm-plugins-misc (1:1.36) unstable; urgency=low
+
+  * Workaround for the dialstring/DTMF mute problems (I-Hope-Fixes: NB#174389).
+  * Sync hearing aid coil gconf key with the control applet.
+  * Added support for gconf boolean keys (mapped to off/on strings).
+
+ -- Krisztian Litkey <mmf-audio-bounces@projects.maemo.org>  Thu, 02 Sep 2010 20:58:29 +0300
+
+ohm-plugins-misc (1:1.35) unstable; urgency=low
+
+  * Filter out lineout from accessory detection (Fixes: NB#187035).
+  * Don't listen to all NameOwnerChanged signals (Fixes: NB#188231).
+
+ -- Krisztian Litkey <mmf-audio-bounces@projects.maemo.org>  Fri, 27 Aug 2010 18:00:19 +0300
+
+ohm-plugins-misc (1:1.34) unstable; urgency=low
+
+  * Workaround for running the incorrect hook with frantic hold/unhold tapping.
+  * Fixes: NB#173949.
+
+ -- Krisztian Litkey <mmf-audio-bounces@projects.maemo.org>  Fri, 20 Aug 2010 21:42:14 +0300
+
+ohm-plugins-misc (1:1.33) unstable; urgency=low
+
+  * Fix in cgroup plugin to handle properly multiple actions
+  * Hearing aid coil support in accessories plugin
+  * Monitoring ngf clients and cleanup if they died
+  * support for notifier class (beside ringtone, missedcall, alarm and event)
+  * Implemented: SWP#Plicy-427
+  * Implemented: SWP#Plicy-407
+  * Implemented  SWP#DUI-3359
+
+ -- Janos Kovacs <mmf-audio-bounces@projects.maemo.org>  Thu, 12 Aug 2010 20:45:12 +0300
+
+ohm-plugins-misc (1:1.32) unstable; urgency=low
+
+  * Installing debug symbols in separate package (Fixes: NB#183227).
+
+ -- Nippan Singam <ext-nippan.singam@nokia.com>  Thu, 05 Aug 2010 11:46:34 +0300
+
+ohm-plugins-misc (1:1.31) unstable; urgency=low
+
+  * ECI probe delay is now configurable (Fixes: NB#180539).
+
+ -- Krisztian Litkey <mmf-audio-bounces@projects.maemo.org>  Thu, 22 Jul 2010 14:57:06 +0300
+
+ohm-plugins-misc (1:1.30) unstable; urgency=low
+
+  * Added limited support for custom per-partition cgroup settings.
+  * Allow "root" cgroup partition to be explicitly defined.
+
+ -- Krisztian Litkey <mmf-audio-bounces@projects.maemo.org>  Thu, 22 Jul 2010 11:36:26 +0300
+
+ohm-plugins-misc (1:1.29) unstable; urgency=low
+
+  * Enabled apptrack plugin.
+
+ -- Krisztian Litkey <mmf-audio-bounces@projects.maemo.org>  Wed, 07 Jul 2010 16:33:07 +0300
+
+ohm-plugins-misc (1:1.28) unstable; urgency=low
+
+  [Krisztian Litkey]
+  * Enabled building the fmradio plugin
+
+  [Wolf Bergenheim]
+  * Added the required build dependency on libbluetooth3-dev
+  * Fixed crashing issue.
+  * Implemented: SWP#Plicy-357.
+
+  [Janos Kovacs]
+  * Fix for proper backlight notification
+  * do not eat up the 'NameOwnerChanged' D-Bus signals
+    in signaling and apptarck modul
+  * Fixes: NB#176688
+
+ -- Wolf Bergenheim <wolf.2.bergenheim@nokia.com>  Wed, 23 Jun 2010 17:00:46 +0300
+
+ohm-plugins-misc (1:1.27) unstable; urgency=low
+
+  * Partial resource freeing support for LED notifications
+  * Implemented: SWP#Plicy-332.
+
+ -- Janos Kovacs <mmf-audio-bounces@projects.maemo.org>  Wed, 09 Jun 2010 15:16:01 +0300
+
+ohm-plugins-misc (1:1.26) unstable; urgency=low
+
+  [Janos Kovacs]
+  * Fixes: NB#164531 - instead of B-Bus session bus start to use system bus
+    in resource & notification plugins to make resource management available
+    even if the session bus were not up
+
+  [Krisztian Litkey]
+  * Grab also the audio/video recording for calls (Fixes: NB#173105).
+  * Fix reverse order realtime-limit parsing.
+  * Relaxed cgroup path parsing pedancy.
+
+ -- Janos Kovacs <mmf-audio-blunces@projects.maemo.org>  Mon, 07 Jun 2010 08:19:21 +0300
+
+ohm-plugins-misc (1:1.25) unstable; urgency=low
+
+  * Generalized classify-by-argv0 to classify-by-argv[0-9]+.
+  * Relaxed cgroup path parsing pedancy.
+
+ -- Krisztian Litkey <mmf-audio-blunces@projects.maemo.org>  Thu, 03 Jun 2010 21:50:09 +0300
+
+ohm-plugins-misc (1:1.24) unstable; urgency=low
+
+  * Implemented: SWP#Plicy-331.
+  * Implemented: SWP#Plicy-326.
+
+ -- Janos Kovacs <mmf-audio-bounces@projects.maemo.org>  Fri, 28 May 2010 22:15:00 +0300
+
+ohm-plugins-misc (1:1.23) unstable; urgency=low
+
+  * Fix TP call disconnecting bugs.
+  * Added plugin for active application notifications over D-BUS.
+  * Implemented: SWP#Plicy-344.
+
+ -- Krisztian Litkey <mmf-audio-bounces@projects.maemo.org>  Fri, 28 May 2010 16:25:09 +0300
+
+ohm-plugins-misc (1:1.22) unstable; urgency=low
+
+  * Implemented: SWP#Plicy-228.
+
+ -- Janos Kovacs <mmf-audio-bounces@projects.maemo.org>  Sun, 23 May 2010 22:11:15 +0300
+
+ohm-plugins-misc (1:1.21) unstable; urgency=low
+
+  * Addon rule reload fix: just purge hash table entries (Fixes: NB#166334).
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Thu, 20 May 2010 18:00:00 +0300
+
+ohm-plugins-misc (1:1.20) unstable; urgency=low
+
+  [Wolf Bergenheim]
+  * Removed context plugin
+  * Implemented: SWP#Plicy-247
+
+ -- Wolf Bergenheim <ext-wolf.2.bergenheim@nokia.com>  Mon, 17 May 2010 17:02:12 +0300
+
+ohm-plugins-misc (1:1.19) unstable; urgency=low
+
+  * Avoid crashing on videoep plugin cleanup.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Wed, 12 May 2010 21:08:03 +0300
+
+ohm-plugins-misc (1:1.18) unstable; urgency=low
+
+  * Initial support for XRandr and TV-out routing
+  * Implemented: SWP#Plicy-114
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Sat, 01 May 2010 20:12:41 +0300
+
+ohm-plugins-misc (1:1.17) unstable; urgency=low
+
+  * Declare missing dependencies for the resource and notification plugins.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Thu, 29 Apr 2010 00:49:47 +0300
+
+ohm-plugins-misc (1:1.16) unstable; urgency=low
+
+  * Fix dependency problems with context plugin. Now it loads after dres,
+    so the factstore is pre-populated.
+  * Implemented: SWP#Plicy-309
+
+ -- Wolf Bergenheim <ext-wolf.2.bergenheim@nokia.com>  Tue, 27 Apr 2010 10:22:43 +0300
+
+ohm-plugins-misc (1:1.15) unstable; urgency=low
+
+  * Fix destroy_window leaving pointers to freed memory (Fixes: NB#165310).
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Thu, 22 Apr 2010 20:50:18 +0300
+
+ohm-plugins-misc (1:1.14) unstable; urgency=low
+
+  * Don't take audio for incoming calls prematurely (Fixes: NB#164780).
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Tue, 20 Apr 2010 18:15:23 +0300
+
+ohm-plugins-misc (1:1.13) unstable; urgency=low
+
+  [Krisztian Litkey]
+  * Don't assume initial lookup of notification rules succeeds (Fixes: NB#164529).
+  * Conference member hold state tracking fixes (Fixes: NB#151043).
+  * Autoheld calls also need the audio resource.
+
+  [Vsevolod Buzinov]
+  * Added automatic tests for hal, profile, signaling plugins.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Fri, 16 Apr 2010 12:10:59 +0300
+
+ohm-plugins-misc (1:1.12) unstable; urgency=low
+
+  * Added automatic tests for hal, profile and signaling plugins.
+
+ -- Vsevolod Buzinov <ext-vsevolod.buzinov@nokia.com>  Thu, 15 Apr 2010 09:58:10 +0300
+
+ohm-plugins-misc (1:1.11) unstable; urgency=low
+
+  * Linking the notification plugin against libresource (Fixes: NB#163329).
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Wed, 07 Apr 2010 21:46:10 +0300
+
+ohm-plugins-misc (1:1.10) unstable; urgency=low
+
+  * Don't put conference calls to localhungup state.
+  * Honour disconnect decision for new incoming and outgoing calls.
+  * Initial input-layer based wired headset detection with ECI support.
+  * Implemented: SWP#Plicy-207
+  * Don't install ohm-session-agents xsession script (Fixes: NB#162526).
+
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Tue, 30 Mar 2010 01:18:23 +0300
+
+ohm-plugins-misc (1:1.9) unstable; urgency=low
+
+  * Fixes: NB#161198 - Unable to hear audio from any other MAFW player process except for the qmafw-dbus-wrapper
+
+ -- Wolf Bergenheim <ext-wolf.2.bergenheim@nokia.com>  Thu, 25 Mar 2010 13:43:48 +0200
+
+ohm-plugins-misc (1:1.8) unstable; urgency=low
+
+  * Implemented: SWP#Plicy-136
+
+ -- Wolf Bergenheim <ext-wolf.2.bergenheim@nokia.com>  Tue, 16 Mar 2010 13:16:09 +0200
+
+ohm-plugins-misc (1:1.7) unstable; urgency=low
+
+  * Bumped version.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Tue, 09 Mar 2010 16:42:04 +0200
+
+ohm-plugins-misc (1:1.6) unstable; urgency=low
+
+  * Bumped version.
+
+ -- Wolf Bergenheim <ext-wolf.2.bergenheim@nokia.com>  Tue, 16 Feb 2010 15:46:31 +0200
+
+ohm-plugins-misc (1:1.5) unstable; urgency=low
+
+  [Janos Kovacs]
+  * Introducing 'resource' plugin.
+
+ -- Wolf Bergenheim <ext-wolf.2.bergenheim@nokia.com>  Mon, 01 Feb 2010 10:46:27 +0200
+
+ohm-plugins-misc (1:1.4) unstable; urgency=low
+
+  [Krisztian Litkey]
+  * Accessory plugin fix: transaction id must be an integer, not a string.
+  * Filter spurious/duplicate accessory events.
+  * Adjusted mute suppression to the fixes in policy-settings.
+
+  [Janos Kovacs]
+  * videoep support for callui window popup/popdown messages.
+
+ -- Wolf Bergenheim <ext-wolf.2.bergenheim@nokia.com>  Fri, 13 Nov 2009 11:34:18 +0200
+
+ohm-plugins-misc (1:1.3) unstable; urgency=low
+
+  * Fixes: NB#148081 - TV out doesn't work
+
+ -- Martin Wolf <ext-martin.2.wolf@nokia.com>  Mon, 07 Dec 2009 16:00:00 +0200
+
+ohm-plugins-misc (1:1.2) unstable; urgency=low
+
+  * Bumped version.
+
+ -- Wolf Bergenheim <ext-wolf.2.bergenheim@nokia.com>  Fri, 13 Nov 2009 11:34:18 +0200
+
+ohm-plugins-misc (1:1.1) unstable; urgency=low
+
+  * Removed telephony/mission-control
+  * Fixes: NB#138664 - ohm-plugins-misc: Failed to build package
+  * Fixes: NB#141241 - package 'ohm-plugins-misc' can not be built with BIFH
+
+ -- Wolf Bergenheim <ext-wolf.2.bergenheim@nokia.com>  Fri, 06 Nov 2009 14:44:18 +0200
+
+ohm-plugins-misc (1:1.0) unstable; urgency=low
+
+  * First release for maemo6.
+  * Using the new power button UDI.
+
+ -- Martin Wolf <ext-martin.2.wolf@nokia.com>  Mon, 08 Mar 2010 13:00:00 +0300
+
+ohm-plugins-misc (0.7.0) unstable; urgency=low
+
+  * Introducing 'resource' plugin
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Mon, 07 Dec 2009 12:15:10 +0200
+
+ohm-plugins-misc (0.6.65) unstable; urgency=low
+
+  * Accessory plugin fix: transaction id must be an integer, not a string.
+  * Filter spurious/duplicate accessory events (Fixes: NB 147573).
+  * Tag calls that do not support holding by holdable=no in the factstore.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Tue, 24 Nov 2009 23:49:51 +0200
+
+ohm-plugins-misc (0.6.64) unstable; urgency=low
+
+  * Adjusted mute suppression to the fixes in policy-settings.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Thu, 12 Nov 2009 19:11:57 +0200
+
+ohm-plugins-misc (0.6.63) unstable; urgency=low
+
+  * videoep support for callui window popup/popdown messages (Fixes: NB#144826)
+  * bumped version number Fixes: NB#145290
+  * Basic support for block device I/O qlen notifications (Artems patches).
+  * Support for OSSO I/O qlen / swap pressure monitoring.
+  * Basic support for variable polling interval in I/O wait monitoring.
+  * Basic support for addon classification rules.
+  * Rudimentary support for include-directive in the configuration file.
+  * Parser improvements (much better error reporting).
+  * Allow int32 handles in NewChannels (workaround for butterfly/msn CM).
+  * Support for thread name evaluation in classification rules.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Wed, 28 Oct 2009 14:18:57 +0200
+
+ohm-plugins-misc (0.6.62) unstable; urgency=low
+
+  * eliminate multiple playback AllowedState messages on D-Bus
+  * in playback change the competion_cb() signature
+  * in videoep & cgroup filter the actions based on the signal name
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Sun, 27 Sep 2009 18:50:00 +0300
+
+ohm-plugins-misc (0.6.61) unstable; urgency=low
+
+  * support for systemui popup/popdown notification in videoep
+  * buttons plugin for power key events
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Tue, 08 Sep 2009 02:00:00 +0300
+
+ohm-plugins-misc (0.6.60) unstable; urgency=low
+
+  * support for 'goodbye' signal in playback. Needed for playback object,
+    or client in our terminology, deletion.
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Tue, 08 Sep 2009 02:00:00 +0300
+
+ohm-plugins-misc (0.6.59) unstable; urgency=low
+
+  * reclassify-count for cgroup configuration
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Sun, 30 Aug 2009 23:10:00 +0300
+
+ohm-plugins-misc (0.6.58) unstable; urgency=low
+
+  * Close and reopen netlink socket if it fails to poll (Fixes: NB#135103).
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Mon, 24 Aug 2009 20:15:52 +0300
+
+ohm-plugins-misc (0.6.57) unstable; urgency=low
+
+  * Put ohm-session-agent back to .post/55 as requested.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Fri, 21 Aug 2009 21:51:53 +0300
+
+ohm-plugins-misc (0.6.56) unstable; urgency=low
+
+  * Moved ohm-session-agent startup to Xsession.d.
+  * Crude console command for dumping groups.
+  * Fix crash in case cgroup mount fails.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Tue, 18 Aug 2009 15:41:32 +0300
+
+ohm-plugins-misc (0.6.55) unstable; urgency=low
+
+  * Added cgroupfs discovery and automount support.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Fri, 14 Aug 2009 16:01:06 +0300
+
+ohm-plugins-misc (0.6.54) unstable; urgency=low
+
+  * Don't 'waste 3 dev's and 1 tester's time' any more by printing out the
+    configuration (Fixes: NB#131127).
+  * Ohm startup agent from 10 to 55 in Xsession (Fixes: NB#130488).
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Mon, 03 Aug 2009 22:15:00 +0300
+
+ohm-plugins-misc (0.6.53) unstable; urgency=low
+
+  * Ouch... don't forget to add processes to the cgroup pidhash table.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Fri, 31 Jul 2009 14:50:18 +0300
+
+ohm-plugins-misc (0.6.52) unstable; urgency=low
+
+  [Krisztian Litkey]
+  * Added cgroups plugin.
+
+  [Janos Kovacs]
+  * 'delay' plugin added.
+  * Playback plugin kludge for ringtone,
+  * Configurable D-Bus message timeout in playback
+  * Fixes: NB#130717
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Mon, 27 Jul 2009 23:33:29 +0300
+
+ohm-plugins-misc (0.6.51) unstable; urgency=low
+
+  * kludge in playback plugin to set 'flash' bit for ringtone players
+    in order that they can preempt the flash player if needed
+  * 'delay' plugin: support for delayed execution of policy rules
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Fri, 24 Jul 2009 16:50:00 +0300
+
+ohm-plugins-misc (0.6.50) unstable; urgency=low
+
+  * Added timestamping points from timestamp to development branch (Fixes: NB#128728).
+  * Added trivial timestamp plugin (just wraps sp_timestamp).
+  * Replaced calls to deprecated libprofile functions with the preferred ones.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Sat, 18 Jul 2009 19:34:19 +0300
+
+ohm-plugins-misc (0.6.49) unstable; urgency=low
+
+  [Krisztian Litkey]
+  * Don't treat remote hold as local one.
+  * Memory leak fix: don't leak DBUS error replies.
+  * Added support for querying mute, privacy-, and bluetooth override.
+  * Separated telephony offhold hook from active (remote accept) hook.
+
+  [Ismo Puustinen]
+  * Set BT override state to "default" when BT headset is "connected".
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Mon, 13 Jul 2009 01:29:07 +0300
+
+ohm-plugins-misc (0.6.48) unstable; urgency=low
+
+  * Added support for three-state BT override.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Wed,  8 Jul 2009 14:08:39 +0300
+
+ohm-plugins-misc (0.6.47) unstable; urgency=low
+
+  * Support for cmtautohold policy decision.
+  * Support for rejecting calls as busy.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Fri, 05 Jul 2009 14:32:52 +0300
+
+ohm-plugins-misc (0.6.46) unstable; urgency=low
+
+  [ Krisztian Litkey ]
+  * Added new playback class/group Input/inputsound.
+
+  [ Ismo Puustinen ]
+  * Fixed problems in libep that were found by static analysis.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Fri, 03 Jul 2009 12:32:45 +0300
+
+ohm-plugins-misc (0.6.45) unstable; urgency=low
+
+  * Fix early emergency call regression (Fixes: NB#125101).
+  * Added "hfp" flag (int 0 or 1) to the connected_bt_device fact.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Fri, 26 Jun 2009 17:37:16 +0300
+
+ohm-plugins-misc (0.6.44) unstable; urgency=low
+
+  * Bumped version for a new release.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Thu, 25 Jun 2009 12:10:53 +0300
+
+ohm-plugins-misc (0.6.43) unstable; urgency=low
+
+  * Prevent race conditions with event queues (Fixes: NB#123553).
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Thu, 18 Jun 2009 16:38:32 +0300
+
+ohm-plugins-misc (0.6.42) unstable; urgency=low
+
+  [ Krisztian Litkey ]
+  * Ignore HoldStateChanged for hungup calls (Fixes: NB#120665).
+
+  [ Ismo Puustinen ]
+  * Forget bluetooth override state when device goes disconnected
+    (Fixes: NB#121743, Fixes: NB#121625).
+  * Added support for separate signal processing queues.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Mon, 15 Jun 2009 13:51:05 +0300
+
+ohm-plugins-misc (0.6.41) unstable; urgency=low
+
+  * Expose video calls with with video=yes in factstore (necessary to fix NB#120181).
+  * Separated console plugin to a subpackage of its own.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Wed, 03 Jun 2009 17:07:53 +0300
+
+ohm-plugins-misc (0.6.40) unstable; urgency=low
+
+  [ Janos Kovacs ]
+  * To keep coverity happy, some more or less intentional dead-code
+    commented out in videoep/xrt.c
+
+  [ Ismo Puustinen ]
+  * Changed info signal parsing. Fixes: NB#119727
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Mon, 01 Jun 2009 10:11:23 +0300
+
+ohm-plugins-misc (0.6.39) unstable; urgency=low
+
+  [ Janos Kovacs ]
+  * support for media active/inactive messages
+  * denying media messages from unregistered enforcement points
+    (ie. 3rd parties)
+  * resetting the active groups if the related enforcement point is gone
+  * fixing the playback manager's state machine to answer overlapping,
+    subsequent playback requests
+  * fixing the state change rollback after denying request
+    (ringtone stop request for instance)
+  * client save_state debug messages
+  * Fixes: NB#119125
+
+  [ Ismo Puustinen ]
+  * added "name" argument to enforcement point facts.
+
+  [ Krisztian Litkey ]
+  * Save/restore last known profile state.
+  * Fixes: NB#118970
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Wed, 20 May 2009 18:15:30 +0300
+
+ohm-plugins-misc (0.6.38) unstable; urgency=low
+
+  * Delay libprofile initialization until we discover the session bus address.
+  * Fixes: NB#114856
+  * Fixes: NB#116636
+
+ -- K. Litkey <krisztian.litkey@nokia.com>  Mon, 18 May 2009 19:21:17 +0300
+
+ohm-plugins-misc (0.6.37) unstable; urgency=low
+
+  * Don't reboot if ohm-session-agent keeps failing to start up.
+  * Consider a remotely ended call (peer)hungup only if it has ever been connected (Fixes: NB#115110).
+  * Fix setting the TV out standard without cable unplug/plug.
+  * Don't log info messages in MC policy filter plugin (Fixes-partly: NB#110556).
+
+ -- K. Litkey <krisztian.litkey@nokia.com>  Tue, 12 May 2009 15:56:26 +0300
+
+ohm-plugins-misc (0.6.36) unstable; urgency=low
+
+  * Playback fix: setting the client's state to the requested one when sending
+    the property. This 'optimistic' approach is to prevent the falsely
+    filtered revert changes before the state is acknowledged.
+  * improved debug messages: '[dbusid:path pid/stream]' string is added to
+    debug messages in sm.c
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Mon, 04 May 2009 11:08:00 +0300
+
+ohm-plugins-misc (0.6.35) unstable; urgency=low
+
+  * Playback fix: setting the client's state to the requested one if the
+    property setting would fail.
+  * In playback temporarily increasing the D-Bus timeout for property setting
+  * playback support for bluetooth_override
+  * Fixes: NB#111207
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Fri, 24 Apr 2009 14:25:00 +0300
+
+ohm-plugins-misc (0.6.34) unstable; urgency=low
+
+  * BT refactoring.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Tue, 21 Apr 2009 15:46:57 +0300
+
+ohm-plugins-misc (0.6.33) unstable; urgency=low
+
+  * Fixes: NB#111153
+  * Also fixes a HAL memory leak in the error handling.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Wed, 15 Apr 2009 17:39:54 +0300
+
+ohm-plugins-misc (0.6.32) unstable; urgency=low
+
+  * Added missing include of ohm-plugin-log to signaling.h.
+  * Replaced some printf'd errors with OHM_ERROR.
+  * Free sensore facts upon exit.
+  * Proper debug initialization.
+  * Cosmetic changes in logging.
+  * Fixed a HAL issue.
+
+ -- K. Litkey <krisztian.litkey@nokia.com>  Tue, 14 Apr 2009 11:26:42 +0300
+
+ohm-plugins-misc (0.6.31) unstable; urgency=low
+
+  * Policy on the call acceptance/hold signaling path.
+  * Collect MembersChanged emitted before NewChannels by breaindamaged
+    connection managers.
+  * Use the common OHM_{ERROR,WARNING,INFO,DEBUG} macros instead of printfs.
+  * Fixes: NB#110315
+
+ -- K. Litkey <krisztian.litkey@nokia.com>  Tue, 07 Apr 2009 20:32:18 +0300
+
+ohm-plugins-misc (0.6.30) unstable; urgency=low
+
+  * Fixed a HAL bug.
+  * Fixed a few factstore unreffing bugs on exit/cleanup code paths.
+  * Added a sensors plugin with proximity support.
+  * Typoed the changelog.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Tue, 31 Mar 2009 16:54:29 +0300
+
+ohm-plugins-misc (0.6.29) unstable; urgency=low
+
+  * Answering duplicate playback requests.
+  * Decrese the number of policy decisions by issuing ane resolve 'all'
+    after resolving multiple accessory_requests
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Thu, 26 Mar 2009 17:00:00 +0200
+
+ohm-plugins-misc (0.6.28) unstable; urgency=low
+
+  * Support for delayed session bus initialization.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Thu, 19 Mar 2009 10:23:39 +0200
+
+ohm-plugins-misc (0.6.27) unstable; urgency=low
+
+  * Don't reply immediately to playback requests of the current state.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Mon, 16 Mar 2009 22:43:48 +0200
+
+ohm-plugins-misc (0.6.26) unstable; urgency=low
+
+  * Support for blocking mute state change notifications.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Mon, 16 Mar 2009 16:04:33 +0200
+
+ohm-plugins-misc (0.6.25) unstable; urgency=low
+
+  * Fix broken denied playback request handling.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Mon, 16 Mar 2009 12:33:34 +0200
+
+ohm-plugins-misc (0.6.24) unstable; urgency=low
+
+  * Added hooks for DTMF tone transmit start/stop.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Thu, 12 Mar 2009 19:32:53 +0200
+
+ohm-plugins-misc (0.6.23) unstable; urgency=low
+
+  * Added call onhold/active hooks.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Mon, 09 Mar 2009 15:57:54 +0200
+
+ohm-plugins-misc (0.6.22) unstable; urgency=low
+
+  * Fix conference splitting leaving sometimes calls in conference state (hence breaking audio routing).
+  * Don't timeout in playback plugin if already in requested state.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Mon, 09 Mar 2009 10:31:27 +0200
+
+ohm-plugins-misc (0.6.21) unstable; urgency=low
+
+  * Support for non-TP/early emergency calls.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Thu, 26 Feb 2009 11:38:01 +0200
+
+ohm-plugins-misc (0.6.20) unstable; urgency=low
+
+  * Don't run call_connect hook for re-activated (off-hold) calls (Fixes: NB#102833).
+  * Modified videoep to use the new signaling interface.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Mon, 23 Feb 2009 21:25:01 +0200
+
+ohm-plugins-misc (0.6.19) unstable; urgency=low
+
+  * Consider calls being terminated as active (Fixes: NB#99361).
+  * Added signal name changes to both internal and external signaling.
+  * More find clients by dbusid/object rather than pid/stream fixes.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Thu, 19 Feb 2009 19:15:06 +0200
+
+ohm-plugins-misc (0.6.18) unstable; urgency=low
+
+  * according to the aggreement with the UI guys 'flash hack' is introduced
+  * no support anymore for the old libplayback requests without 'stream' field
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Wed, 18 Feb 2009 14:16:00 +0200
+
+ohm-plugins-misc (0.6.17) unstable; urgency=low
+
+  * Fixed a problem in headset detection handling.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Mon, 16 Feb 2009 11:25:32 +0200
+
+ohm-plugins-misc (0.6.16) unstable; urgency=low
+
+  * Fix a bunch of more playback DBUS message handling memory leaks, hopefully the last ones.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Fri, 13 Feb 2009 14:57:28 +0200
+
+ohm-plugins-misc (0.6.15) unstable; urgency=low
+
+  * support for TV signalling standards, like pal&ntsc, in videoep plugin
+  * support for TV cable detection in accessories plugin
+  * startup time BT device detection in accessories plugin
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Thu, 12 Feb 2009 13:23:00 +0200
+
+ohm-plugins-misc (0.6.14) unstable; urgency=low
+
+  * videoep direct frambuffer manipulation is removed
+  * support for the new xv attribute based protocol using libxcb
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Fri, 06 Feb 2009 21:11:00 +0200
+
+ohm-plugins-misc (0.6.13) unstable; urgency=low
+
+  * Fixed a number of errors reported by static analysis.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Thu, 05 Feb 2009 12:29:52 +0200
+
+ohm-plugins-misc (0.6.12) unstable; urgency=low
+
+  * Added call start, call connect and call end hooks.
+  * Removed double dependency on gconf2-dev.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Wed, 04 Feb 2009 19:16:52 +0200
+
+ohm-plugins-misc (0.6.11) unstable; urgency=low
+
+  * Changed BT to support multiple connected profiles at once.
+  * GConf plugin added.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Tue, 03 Feb 2009 16:25:21 +0200
+
+ohm-plugins-misc (0.6.10) unstable; urgency=low
+
+  * videoep plugin added
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Tue, 20 Jan 2009 15:30:00 +0200
+
+ohm-plugins-misc (0.6.9) unstable; urgency=low
+
+  * Support for the new client identification based on DBusID and Path
+  * Fixes in playback Queue management
+  * Support for getting the AllowdState property
+  * set the playhint initial value to "Play" instead of non/NULL
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Fri, 16 Jan 2009 17:54:00 +0200
+
+ohm-plugins-misc (0.6.8) unstable; urgency=low
+
+  * Pass channel object path to abort handler as an argument (Fixes: NB#97975).
+  * Changed the "info" signal to "stream_info" in the playback plugin.
+  * Removed the path definition from the info signal registration.
+  * Invoke resolver hooks when first call is created or the last call destroyed
+  * Workaround for MC call direction misdetection.
+  * Memory leak fixes.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Wed, 14 Jan 2009 15:00:36 +0200
+
+ohm-plugins-misc (0.6.7) unstable; urgency=low
+
+  * Autohold active calls as early as possible when calling out.
+  * Change the playback plugin "info" signal to "command".
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Sun, 04 Jan 2009 18:21:05 +0200
+
+ohm-plugins-misc (0.6.6) unstable; urgency=low
+
+  * Fixed BT device removal handling.
+  * Initial support for the real headset API.
+  * Added missing dvfs.ini.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Mon, 22 Dec 2008 17:06:46 +0200
+
+ohm-plugins-misc (0.6.5) unstable; urgency=low
+
+  * Added a workaround for experience starvation problems.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Fri, 19 Dec 2008 16:46:44 +0200
+
+ohm-plugins-misc (0.6.4) unstable; urgency=low
+
+  * Added workaround for starvation/latency problems to DVFS plugin.
+
+ -- Krisztian Litkey <krisztian.litkey@nokia.com>  Fri, 19 Dec 2008 14:50:17 +0200
+
+ohm-plugins-misc (0.6.3) unstable; urgency=low
+
+  * In the playback plugin fix the crash when the AllowedState property is
+    sent (happens only with libplayback version 0.5-6)
+  * Initial support for the real headset API.
+
+ -- Janos Kovacs <janos.f.kovacs@nokia.com>  Tue, 16 Dec 2008 14:25:04 +0200
+
+ohm-plugins-misc (0.6.2) unstable; urgency=low
+
+  * Don't reactivate autoheld calls if peer hangs up the active call.
+  * Use dh_gencontrol to tag packages with git SHA1.
+  * Added missing n's to printfs... should use OHM_INFO/WARNING/ERROR.
+  * Use requestor property to find out call direction; call order is now int.
+  * Added dependency to libtelepathy-dev.
+  * Fix compilation problems with the latest mission-control.
+  * Rolling back the stetstate field in com.nokia.policy.playback facts.
+  * Fixed a memory handling issue.
+  * Added support for floats in signaling.
+  * More correct handling of ints in signaling.
+  * Support for playback hints (AllowedState property).
+  * Class name is VoiceUI instead of Voiceui.
+  * Added debug strings, fixed dres resolver parameters.
+  * Bumped the version number.
+  * Bluetooth a2dp profile actually appears to work now.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Wed, 10 Dec 2008 15:20:43 +0200
+
+ohm-plugins-misc (0.6.1) unstable; urgency=low
+
+  * Cleanup in the profile plugin.
+  * First shot at conference call support.
+  * Added wired headset support. Fixed a number of bugs in process.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Wed, 19 Nov 2008 19:57:57 +0200
+
+ohm-plugins-misc (0.6) unstable; urgency=low
+
+  * Support for a dedicated policy group for flash in policy rules.
+  * Wired headset support.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Fri, 14 Nov 2008 16:18:51 +0200
+
+ohm-plugins-misc (0.5) unstable; urgency=low
+
+  * Cleanups
+  * Bug fixes (memory leaks, compatibility with new plugin unloading)
+  * Added a telepathy-based telephony plugin. 
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Fri, 17 Oct 2008 15:04:55 +0300
+
+ohm-plugins-misc (0.4) unstable; urgency=low
+
+  * Compatible for new OHM
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Thu, 02 Oct 2008 14:06:30 +0300
+
+ohm-plugins-misc (0.3) unstable; urgency=low
+
+  * Memory leak fixes.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Mon, 29 Sep 2008 14:23:52 +0300
+
+ohm-plugins-misc (0.2) unstable; urgency=low
+
+  * Added support for headsets in accessories plugin.
+  * HAL plugin refactoring.
+  * Profile plugin fixes.
+  * Signaling plugin synchronization.
+  * Unit tests, bug fixes.
+
+ -- Ismo Puustinen <ismo.h.puustinen@nokia.com>  Mon, 25 Aug 2008 14:46:34 +0300
+
+ohm-plugins-misc (0.1) unstable; urgency=low
+
+  * initial release.
+
+ -- K. Litkey <krisztian.litkey@nokia.com>  Wed, 09 Jul 2008 02:19:29 +0200
